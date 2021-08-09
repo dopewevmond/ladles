@@ -2,6 +2,217 @@
 
 {% block content %}
 
-<h1>This is the home page</h1>
+<section id="posts" class="posts-section">
+    <div class="container-lg py-2">
+        <div class="container-lg px-0">
+            <div class="row">
+                <div class="col">
+                    <!-- just for layout -->
+                </div>
+                <div class="col clearfix">
+                    <span class="title-section d-flex justify-content-end py-4">
+                        <button class="btn btn-sm carousel-button--color" type="button" data-bs-target="#postSlider"
+                            data-bs-slide="prev"><i class="fas fa-arrow-left"></i>
+                            <span class="visually-hidden">Previous</span>
+                        </button><span class="mx-1">&nbsp;</span>
+                        <button class="btn btn-sm carousel-button--color" type="button" data-bs-target="#postSlider"
+                            data-bs-slide="next"><i class="fas fa-arrow-right"></i>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
 
+        <div class="container-lg px-0">
+            <div id="postSlider" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner carousel-div--background">
+                    <div class="carousel-item active">
+                        <div class="container-lg bg-card">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-6 p-3 p-md-1">
+                                    <div class="container post-body">
+                                        <h2 class="carousel-h2--text-size">good food,<br>is good mood</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-first order-md-last px-0">
+                                    <div class="carousel-image-position">
+                                        <img src="{{ url_for('static', filename='images/carousel1.jpg') }}" class="card-img-top" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-lg bg-card">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-6 p-3 p-md-1">
+                                    <div class="container post-body">
+                                        <h2 class="carousel-h2--text-size">life is short,<br>eat dessert first</h2>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 order-first order-md-last px-0">
+                                    <div class="carousel-image-position">
+                                        <img src="{{ url_for('static', filename='images/carousel2.jpg') }}" class="card-img-top" alt="...">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-lg bg-card">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-6 p-3 p-md-1">
+                                    <div class="container post-body">
+                                        <h2 class="carousel-h2--text-size">you're not sad,<br>you're hungry</h2>
+                                    </div>
+                                </div>
+                            <div class="col-md-6 order-first order-md-last px-0">
+                                    <div class="carousel-image-position">
+                                        <img src="{{ url_for('static', filename='images/carousel3.jpg') }}" class="card-img-top" alt="...">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-md">
+                    <!-- just for layout -->
+                </div>
+                <div class="col">
+                    <span class="d-flex justify-content-center justify-content-md-end py-md-4">
+                        <span class="icons-span--color">
+                            <a href="#">
+                                <span class="fab fa-twitter"></span>
+                            </a>
+                        </span>
+                        <span class="icons-span--color">
+                            <a href="#">
+                                <span class="fab fa-instagram"></span>
+                            </a>
+                        </span>
+                        <span class="icons-span--color">
+                            <a href="#">
+                                <span class="fab fa-facebook"></span>
+                            </a>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row cards--spacing">
+            <div class="col-12 col-md-4">
+                <a href="#" class="card--link">
+                    <div class="card card--custom">
+                        <img src="{{ url_for('static', filename='images/food1.jpg') }}" class="card-img-top" alt="">
+                        <div class="card-body">
+                          <h5 class="card-title">MENU</h5>
+                        </div>
+                      </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <a href="#" class="card--link">
+                    <div class="card card--custom">
+                        <img src="{{ url_for('static', filename='images/food2.jpg') }}" class="card-img-top" alt="">
+                        <div class="card-body">
+                          <h5 class="card-title">SPECIALS</h5>
+                        </div>
+                      </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <a href="#" class="card--link">
+                    <div class="card card--custom">
+                        <img src="{{ url_for('static', filename='images/food3.jpg') }}" class="card-img-top" alt="">
+                        <div class="card-body">
+                          <h5 class="card-title">LOCATE US</h5>
+                        </div>
+                      </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="footer">
+    <div class="container-lg">
+        <div class="row">
+            <div class="col-12 col-md-6 footer--position footer--position-left">
+                <a class="" href="#">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="" loading="lazy" height="80">
+                  </a>
+            </div>
+            <div class="col col-md footer--position footer--position-right">
+                <span class="d-flex justify-content-center justify-content-md-end py-md-4">
+                    <span class="icons-span--color">
+                        <a href="#">
+                            <span class="fab fa-twitter"></span>
+                        </a>
+                    </span>
+                    <span class="icons-span--color">
+                        <a href="#">
+                            <span class="fab fa-instagram"></span>
+                        </a>
+                    </span>
+                    <span class="icons-span--color">
+                        <a href="#">
+                            <span class="fab fa-facebook"></span>
+                        </a>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-12 col-md-4 footer--mobile-spacing">
+                <h6>HOURS</h6>
+                <ul>
+                    <li>Mon-Fri: 10:30am-9:00pm</li>
+                    <li>Sat: 11:00am-9:00pm</li>
+                    <li>Sun: 12:00pm-9:00pm</li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-4 footer--mobile-spacing">
+                <h6>ADDRESS</h6>
+                <ul>
+                    <li><span>1956 Marcus Street</span></li>
+                    <li><span>Tuscaloosa AL 35401</span></li>
+                </ul>
+            </div>
+
+            <div class="col-12 col-md-4 footer--mobile-spacing">
+                <h6>QUICK LINKS</h6>
+                <ul>
+                    <li><a href="#" class="footer-li--a">HOME</a></li>
+                    <li><a href="#" class="footer-li--a">MENU</a></li>
+                    <li><a href="#" class="footer-li--a">GALLERY</a></li>
+                    <li><a href="#" class="footer-li--a">RESERVE TABLE</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</footer>
 {% endblock %}

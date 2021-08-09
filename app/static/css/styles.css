@@ -5,3 +5,105 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+.carousel-button--color {
+    color: #fff;
+    background-color: #272727;
+    border-color: #272727;
+    transition: all .3s linear 0s;
+}
+.carousel-button--color:hover {
+    color: #272727;
+    background-color: #fff;
+    border-color: #fff;
+}
+.carousel-div--background {
+    background-color: #000;
+    color: #fff;
+}
+.carousel-h2--text-size {
+    font-size: 40px;
+}
+.icons-span--color {
+    font-size: 1.8rem;
+    padding-left: 20px;
+}
+.icons-span--color > a {
+    color: rgb(148, 148, 148);
+}
+.icons-span--color > a:hover {
+    color: #fff;
+}
+.footer {
+    background-color: #353535;
+    color: #fff;
+}
+.footer--position {
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+footer li, footer h6 {
+    text-align: center;
+}
+footer h6 {
+    margin-bottom: 10px;
+}
+footer li {
+    margin-bottom: 10px;
+}
+.footer-li--a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-li--a:hover {
+    color: rgb(182, 182, 182);
+}
+.footer--mobile-spacing {
+    padding-bottom: 30px;
+}
+.card--custom {
+    width: 100%;
+    background-color: #272727;
+    color: white;
+    text-align: center;
+}
+.card--link {
+    color: #fff;
+    text-decoration: none;
+}
+.cards--spacing {
+    margin: 80px 0;
+}
+.cards--spacing > div {
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .carousel-h2--text-size {
+        font-size: 50px;
+    }   
+    .footer--position-right {
+        text-align: left;
+    }
+    .footer--position-left {
+        text-align: left;
+    }
+    footer h6 {
+        margin-bottom: 30px;
+    }
+    .footer--mobile-spacing {
+        padding-bottom: 0;
+    }
+    .cards--spacing > div {
+        margin-bottom: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carousel-h2--text-size {
+        font-size: 75px;
+    }   
+}

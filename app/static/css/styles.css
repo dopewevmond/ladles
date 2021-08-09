@@ -5,6 +5,22 @@
     padding-left: 30px;
     padding-right: 30px;
 }
+.navbar-li--links {
+    text-align: center;
+}
+.navbar-a--text {
+    font-weight: bold;
+}
+.navbar--button {
+    background-color: #bb8640;
+    color: rgb(226, 226, 226);
+    border-radius: 35px;
+    transition: all .5s linear 0s;
+}
+.navbar--button:hover {
+    background-color: #FF9001;
+    color: #fff;
+}
 .carousel-button--color {
     color: #fff;
     background-color: #272727;
@@ -69,7 +85,15 @@ footer li {
     background-color: #272727;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
+.card--custom > img {
+    transition: transform .5s ease;
+}
+.card--custom:hover img {
+    transform: scale(1.5);
+}
+
 .card--link {
     color: #fff;
     text-decoration: none;

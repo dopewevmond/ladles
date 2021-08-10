@@ -85,13 +85,15 @@ footer li {
     background-color: #272727;
     color: white;
     text-align: center;
+}
+.card-image--container {
     overflow: hidden;
 }
-.card--custom > img {
+.card-image--container > img {
     transition: transform .5s ease;
 }
-.card--custom:hover img {
-    transform: scale(1.5);
+.card-image--container:hover img {
+    transform: scale(1.2);
 }
 
 .card--link {

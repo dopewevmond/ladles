@@ -106,6 +106,9 @@ footer li {
 .cards--spacing > div {
     margin-bottom: 30px;
 }
+.form-label--color {
+    color: rgb(180, 12, 12);
+}
 
 @media (min-width: 768px) {
     .carousel-h2--text-size {

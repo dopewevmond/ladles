@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, DateTimeField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms.fields.html5 import DateTimeLocalField
 from wtforms.validators import DataRequired
 
 class LoginForm(FlaskForm):
@@ -12,5 +13,6 @@ class ReservationForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     phone_number = StringField('Phone Number', validators=[DataRequired()])
     email = StringField('Email address')
-    date = DateTimeField('Select a date and time', validators=[DataRequired()])
+    date = DateTimeLocalField('Select a date and time', format='%Y-%m-%d %H:%M')
+    comments = TextAreaField()
     submit = SubmitField('Reserve Table')

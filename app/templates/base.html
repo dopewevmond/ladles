@@ -36,7 +36,7 @@
                 <li class="nav-item navbar-button--padding">
                     <a href="#" class="nav-link navbar-a--text">GALLERY</a>
                 </li>
-                <button class="btn navbar-a--text navbar--button">RESERVE A TABLE</button>
+                <a href="{{ url_for('reserve')}}" class="btn navbar-a--text navbar--button">RESERVE A TABLE</a>
               </ul>
             </form>
           </div>
@@ -104,7 +104,7 @@
                         <li><a href="#" class="footer-li--a">HOME</a></li>
                         <li><a href="#" class="footer-li--a">MENU</a></li>
                         <li><a href="#" class="footer-li--a">GALLERY</a></li>
-                        <li><a href="#" class="footer-li--a">RESERVE TABLE</a></li>
+                        <li><a href="{{ url_for('reserve')}}" class="footer-li--a">RESERVE TABLE</a></li>
                     </ul>
                 </div>
             </div>

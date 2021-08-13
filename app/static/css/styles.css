@@ -109,6 +109,10 @@ footer li {
 .form-label--color {
     color: rgb(180, 12, 12);
 }
+.card-image--size {
+    width: 100%;
+    height: 22rem;
+}
 
 @media (min-width: 768px) {
     .carousel-h2--text-size {

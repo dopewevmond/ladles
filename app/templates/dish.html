@@ -3,15 +3,16 @@
 {% block content %}
 
 
-<div class="container">
-    <div class="row">
+<div class="container text-white">
+    <h3 class="pb-2">Menu</h3>
 
+    <div class="row">
         {% for post in posts %}
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 pb-4">
             <a href="#" class="card--link">
                 <div class="card card--custom h-100">
                     <div class="card-image--container">
-                        <img src="{{post.image}}" class="card-img-top" alt="">
+                        <img src="{{post.image}}" class="card-img-top card-image--size" alt="">
                     </div>
                     <div class="card-body">
                       <h5 class="card-title">{{post.name}}</h5>
@@ -19,6 +20,16 @@
                   </div>
             </a>
         </div>
+
+        <!-- <div class="col-12 col-md-4">
+            <div class="card" style="width: 100%;">
+                <img class="card-img-top card-image--size" src="{{post.image}}" alt="{{post.description}}">
+                <div class="card-body">
+                    <p class="card-text">{{post.name}}</p>
+                </div>
+            </div>
+        </div> -->
+        
         {% endfor %}
     </div>
 </div>

@@ -18,7 +18,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <a class="navbar-brand mt-2 mt-lg-0" href="/">
                 <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="" loading="lazy" height="120">
               </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
             <form class="d-flex">
               <ul class="navbar-nav w-100 navbar-li--links">
                 <li class="nav-item navbar-button--padding">
-                    <a href="#" class="nav-link navbar-a--text">MENU</a>
+                    <a href="{{ url_for('menu') }}" class="nav-link navbar-a--text">MENU</a>
                 </li>
                 <li class="nav-item navbar-button--padding">
                     <a href="#" class="nav-link navbar-a--text">GALLERY</a>
@@ -53,7 +53,7 @@
         <div class="container-lg">
             <div class="row">
                 <div class="col-12 col-md-6 footer--position footer--position-left">
-                    <a class="" href="#">
+                    <a class="" href="/">
                         <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="" loading="lazy" height="80">
                       </a>
                 </div>
@@ -101,8 +101,8 @@
                 <div class="col-12 col-md-4 footer--mobile-spacing">
                     <h6>QUICK LINKS</h6>
                     <ul>
-                        <li><a href="#" class="footer-li--a">HOME</a></li>
-                        <li><a href="#" class="footer-li--a">MENU</a></li>
+                        <li><a href="/" class="footer-li--a">HOME</a></li>
+                        <li><a href="{{ url_for('menu') }}" class="footer-li--a">MENU</a></li>
                         <li><a href="#" class="footer-li--a">GALLERY</a></li>
                         <li><a href="#" class="footer-li--a">RESERVE TABLE</a></li>
                     </ul>

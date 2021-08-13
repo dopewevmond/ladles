@@ -1,6 +1,9 @@
 .body-background--black {
     background: black;
 }
+.light-black--background {
+    background: #272727;
+}
 .navbar-button--padding {
     padding-left: 30px;
     padding-right: 30px;
@@ -10,6 +13,13 @@
 }
 .navbar-a--text {
     font-weight: bold;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    color: rgba(255,255,255,.55);
+}
+.navbar-a--text:hover {
+    color: #FF9001;
 }
 .navbar--button {
     background-color: #bb8640;
@@ -47,7 +57,7 @@
     color: rgb(148, 148, 148);
 }
 .icons-span--color > a:hover {
-    color: #fff;
+    color: #FF9001;
 }
 .footer {
     background-color: #353535;
@@ -75,7 +85,8 @@ footer li {
     text-decoration: none;
 }
 .footer-li--a:hover {
-    color: rgb(182, 182, 182);
+    color: #FF9001;
+    text-decoration: underline;
 }
 .footer--mobile-spacing {
     padding-bottom: 30px;
@@ -114,6 +125,36 @@ footer li {
     height: 22rem;
 }
 
+.menu-item--italic {
+    font-style: italic;
+}
+.text--capitalize {
+    text-transform: capitalize;
+}
+.menu-item--price {
+    font-weight: bold;
+    border-radius: 5px;
+    background: #535353;
+    color: #FF9001;
+}
+.menu-item--price {
+    height: 12rem;
+}
+.menu--breadcrumb {
+    background: #272727;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    position: relative;
+    top: -1rem;
+}
+.menu--breadcrumb a {
+    color: #fff;
+    text-decoration: none;
+}
+.menu--breadcrumb a:hover {
+    color: #FF9001;
+    text-decoration: underline;
+}
 @media (min-width: 768px) {
     .carousel-h2--text-size {
         font-size: 50px;

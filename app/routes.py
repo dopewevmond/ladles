@@ -1,3 +1,4 @@
+from operator import pos
 from flask_login.utils import login_required
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
@@ -10,7 +11,8 @@ from werkzeug.urls import url_parse
 @app.route('/index')
 def index():
     title='Home'
-    return render_template('index.html', title=title)
+    special = DishCategory.query.filter_by(name='specials').first().id or '#'
+    return render_template('index.html', title=title, special_id=special)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -44,12 +46,17 @@ def admin():
         db.session.add(dish)
         db.session.commit()
         flash('The post was made successfully')
-
-        return '<h1>Successfully uploaded dish</h1>'
     return render_template('admin.html', title=title, form=form)
 
 
-@app.route('/menu')
+@app.route('/menu/')
 def menu():
     posts = DishCategory.query.all()
-    return render_template('dish.html', title='Menu', posts=posts)
+    return render_template('category.html', title='Menu', posts=posts)
+
+@app.route('/menu/<id>')
+def dishes(id):
+    posts = list(Dish.query.filter_by(category_id=id))
+    num_posts = len(posts)
+    category = DishCategory.query.filter_by(id=id).first()
+    return render_template('dish.html', title=category, posts=posts, number=num_posts)

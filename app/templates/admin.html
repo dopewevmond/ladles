@@ -5,6 +5,44 @@
 <div class="container text-white">
     <h1 class="">Welcome to the admin page</h1>
     <a class="btn btn-warning" href=" {{ url_for('logout') }}">Logout</a>
+
+    <h2>Upload a dish</h2>
+
+    <form action="" method="POST" novalidate>
+        {{form.hidden_tag() }}
+
+        <p>
+            {{form.name.label}}
+            {{form.name(size=32)}}
+            {% for error in form.name.errors %}
+                <span class="form-label--color">[ {{error}} ]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.image.label}}
+            {{form.image(size=32)}}
+            {% for error in form.image.errors %}
+                <span class="form-label--color">[ {{error}} ]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.description.label}}
+            {{form.description(size=32)}}
+            {% for error in form.description.errors %}
+                <span class="form-label--color">[ {{error}} ]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.category.label}}
+            {{form.category()}}
+            {% for error in form.category.errors %}
+                <span class="form-label--color">[ {{error}} ]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{form.submit()}}
+        </p>
+    </form>
 </div>
 
 

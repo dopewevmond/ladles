@@ -37,6 +37,23 @@
                 <span class="form-label--color">[ {{error}} ]</span>
             {% endfor %}
         </p>
+
+        <p>
+            {{form.time_start.label}} <span class="form-label--color">*</span> <br>
+            {{form.time_start() }} <br>
+            {% for error in form.time_start.errors %}
+                <span class="form-label--color">[ {{error}} ]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{form.time_end.label}} <span class="form-label--color">*</span> <br>
+            {{form.time_end() }} <br>
+            {% for error in form.time_end.errors %}
+                <span class="form-label--color">[ {{error}} ]</span>
+            {% endfor %}
+        </p>
+
         <p>
             {{form.comments.label}} <br>
             {{form.comments(cols=35, rows=20)}}

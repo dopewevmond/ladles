@@ -1,6 +1,3 @@
-from enum import unique
-
-from sqlalchemy.orm import backref
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -30,7 +27,7 @@ class DishCategory(db.Model):
     dishes = db.relationship('Dish', backref='category')
 
     def __repr__(self):
-        return '<DishCategory {}>'.format(self.name)
+        return self.name
 
 
 class Dish(db.Model):

@@ -24,6 +24,7 @@ class User(UserMixin, db.Model):
 class DishCategory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
+    image = db.Column(db.String(64))
     dishes = db.relationship('Dish', backref='category')
 
     def __repr__(self):

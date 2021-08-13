@@ -3,7 +3,7 @@ from app import app, db
 from flask import render_template, flash, redirect, url_for, request
 from app.forms import LoginForm, PostDishForm
 from flask_login import current_user, login_user, logout_user
-from app.models import User, Dish
+from app.models import User, Dish, DishCategory
 from werkzeug.urls import url_parse
 
 @app.route('/')
@@ -47,3 +47,9 @@ def admin():
 
         return '<h1>Successfully uploaded dish</h1>'
     return render_template('admin.html', title=title, form=form)
+
+
+@app.route('/menu')
+def menu():
+    posts = DishCategory.query.all()
+    return render_template('dish.html', title='Menu', posts=posts)

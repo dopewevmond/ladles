@@ -19,6 +19,6 @@ class PostDishForm(FlaskForm):
     price = IntegerField('Price of dish', validators=[DataRequired()])
     image = StringField('Enter a link to an image', validators=[DataRequired()])
     description = TextAreaField(validators=[DataRequired()])
-    category = QuerySelectField(label='Select dish category', query_factory=category_query, allow_blank=True)
+    category = QuerySelectField(label='Select dish category', query_factory=category_query, allow_blank=True, validators=[DataRequired()])
     submit = SubmitField('Upload dish')
     

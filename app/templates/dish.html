@@ -17,17 +17,25 @@
             {% for post in posts %}
             <div class="col-12 col-md-6 py-4">
                 <div class="card float-right light-black--background text-white">
-                    <div class="card-body">
+                    <div class="card-body">                        
                         <div class="row">
                             <div class="col-sm-5 media">
                             <img class="d-block w-100 menu-item--price" src="{{post.image}}" alt="">
                             </div>
                             <div class="col-sm-7">
-                            <div class="card-block">
+                            <div class="card-block position-relative">
+                                <!-- DELETE BUTTON -->
+                                <div class="card-button--absolute">
+                                    <a href="{{url_for('confirm_delete', id=post.id)}}">
+                                        Delete <i class="fa fa-trash"></i>
+                                    </a>
+                                </div>
+
+
                                 <h4 class="card-title text-capitalize">{{post.name}}</h4>
                                 <p class="menu-item--italic mb-1">{{post.description}}</p>
                                 <br>
-                                <span class="p-2 float-right menu-item--price">${{post.price}}</span>
+                                <span class="p-2 float-right menu-item--price">$<span class="js-decimal">{{post.price}}</span></span>
                             </div>
                             </div>
                         </div>
@@ -37,6 +45,9 @@
             {% endfor %}
         {% else %}
             <h5>Coming Soon...</h3>
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('login') }}" class="btn btn-warning button--width m-4">Upload a dish</a>
+                {% endif %}
         {% endif %}
     </div>
 </div>

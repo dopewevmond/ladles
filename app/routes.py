@@ -6,6 +6,7 @@ from app.forms import LoginForm, PostDishForm
 from flask_login import current_user, login_user, logout_user
 from app.models import User, Dish, DishCategory
 from werkzeug.urls import url_parse
+from sqlalchemy import exc
 
 @app.route('/')
 @app.route('/index')
@@ -42,11 +43,37 @@ def admin():
     title='Admin'
     form = PostDishForm()
     if form.validate_on_submit():
-        dish = Dish(name=form.name.data, image=form.image.data, description=form.description.data, category=form.category.data)
-        db.session.add(dish)
-        db.session.commit()
-        flash('The post was made successfully')
+        try:
+            dish = Dish(name=form.name.data, image=form.image.data, description=form.description.data, category=form.category.data, price=form.price.data)
+            db.session.add(dish)
+            db.session.commit()
+            flash('The post was made successfully')
+        except exc.IntegrityError:
+            db.session.rollback()
+            flash('The dish could not be created. This may be because it already exists in the system')
+        return redirect(url_for('admin'))
+
     return render_template('admin.html', title=title, form=form)
+
+
+@app.route('/admin/confirm-delete/<id>')
+@login_required
+def confirm_delete(id):
+    dish = Dish.query.filter_by(id=id).first()
+    return render_template('delete.html', title='Confirm Delete', dish=dish)
+
+
+@app.route('/admin/delete/<id>')
+@login_required
+def delete(id):
+    dish = Dish.query.filter_by(id=id).first()
+    if dish:
+        db.session.delete(dish)
+        db.session.commit()
+        flash('The dish has been successfully deleted')
+    posts = DishCategory.query.all()
+    
+    return render_template('category.html', title='Menu', posts=posts)
 
 
 @app.route('/menu/')

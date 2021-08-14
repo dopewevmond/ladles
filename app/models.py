@@ -37,7 +37,7 @@ class Dish(db.Model):
     image = db.Column(db.String(64))
     description = db.Column(db.String(140))
     category_id = db.Column(db.Integer, db.ForeignKey('dish_category.id'))
-    price = db.Column(db.Float)
+    price = db.Column(db.Float(2))
 
     def __repr__(self):
         return '<Dish {}>'.format(self.name)

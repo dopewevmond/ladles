@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<main>
+    <div class="container">
+      <div class="row row-content">
+        <div class="col-12 col-lg-6 align-self-lg-center text-white text-center text-lg-left">
+            <h2>Delete Dish</h2>
+            <div class="d-none d-lg-block">
+                <img src="{{url_for('static', filename='images/logo.svg')}}" alt="" width="500">
+            </div>
+        </div>
+
+        <div class="col col-lg py-5 py-lg-0 align-self-lg-center">
+
+        {% if dish %}
+          <h3 class="text-white">Are you sure you want to delete this dish <span class="text-capitalize">[{{dish.name}}]</span>?</h3>
+          <a href="{{url_for('menu')}}" class="btn btn-secondary">Back to Menu</a>
+          <a href="{{url_for('delete', id=dish.id)}}" class="btn btn-danger">Confirm Delete</a>
+        {% else %}
+            <h2 class="text-white">Dish not found</h2>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+{% endblock %}

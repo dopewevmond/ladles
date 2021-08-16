@@ -24,12 +24,15 @@
                             </div>
                             <div class="col-sm-7">
                             <div class="card-block position-relative">
+
                                 <!-- DELETE BUTTON -->
+                                {% if current_user.is_authenticated %}
                                 <div class="card-button--absolute">
-                                    <a href="{{url_for('confirm_delete', id=post.id)}}">
-                                        Delete <i class="fa fa-trash"></i>
+                                    <a href="{{url_for('confirm_delete', id=post.id)}}" class="btn btn-danger text-white btn-sm">
+                                        Delete
                                     </a>
                                 </div>
+                                {% endif %}
 
 
                                 <h4 class="card-title text-capitalize">{{post.name}}</h4>

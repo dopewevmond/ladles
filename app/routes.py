@@ -26,16 +26,18 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
-        next_page = request.args.get('next')
-        if not next_page or url_parse(next_page).netloc != '':
-            next_page=url_for('admin')
-        return redirect(next_page)
+        # next_page = request.args.get('next')
+        # if not next_page or url_parse(next_page).netloc != '':
+        #     next_page=url_for('menu')
+        # return redirect(next_page)
+        return redirect(url_for('menu'))
     return render_template('login.html', form=form)
 
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('admin'))
+    flash('Successfully logged out')
+    return redirect(url_for('menu'))
 
 @app.route('/admin', methods=['GET', 'POST'])
 @login_required
@@ -51,7 +53,7 @@ def admin():
         except exc.IntegrityError:
             db.session.rollback()
             flash('The dish could not be created. This may be because it already exists in the system')
-        return redirect(url_for('admin'))
+        return redirect(url_for('menu'))
 
     return render_template('admin.html', title=title, form=form)
 

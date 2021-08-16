@@ -119,7 +119,9 @@
                 <a href="{{ url_for('menu') }}" class="card--link">
                     <div class="card card--custom">
                         <div class="card-image--container">
-                            <img src="{{ url_for('static', filename='images/food1.jpg') }}" class="card-img-top" alt="">
+                            <div class="card--height">
+                                <img src="{{url_for('static', filename='images/food1.jpg')}}" class="card-img-top h-100" alt="">
+                            </div>
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">MENU</h5>
@@ -132,7 +134,9 @@
                 <a href="{{ url_for('dishes', id=special_id) }}" class="card--link">
                     <div class="card card--custom">
                         <div class="card-image--container">
-                            <img src="{{ url_for('static', filename='images/food2.jpg') }}" class="card-img-top" alt="">
+                            <div class="card--height">
+                                <img src="{{url_for('static', filename='images/food2.jpg')}}" class="card-img-top h-100" alt="">
+                            </div>
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">SPECIALS</h5>
@@ -145,7 +149,11 @@
                 <a href="#" class="card--link">
                     <div class="card card--custom">
                         <div class="card-image--container">
-                            <img src="{{ url_for('static', filename='images/food3.jpg') }}" class="card-img-top" alt="">
+                            <div class="card--height">
+                                <div id="map" class="h-100">
+                                    <!-- MAP GOES HERE -->
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">LOCATE US</h5>

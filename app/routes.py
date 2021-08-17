@@ -12,7 +12,10 @@ from sqlalchemy import exc
 @app.route('/index')
 def index():
     title='Home'
-    special = DishCategory.query.filter_by(name='specials').first().id or '#'
+    try:
+        special = DishCategory.query.filter_by(name='specials').first().id
+    except AttributeError:
+        special = '#'
     return render_template('index.html', title=title, special_id=special)
 
 @app.route('/login', methods=['GET', 'POST'])

@@ -11,7 +11,7 @@ class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
-    submit = SubmitField('Sign In')
+    submit = SubmitField('Log In')
 
 
 class PostDishForm(FlaskForm):
@@ -21,4 +21,3 @@ class PostDishForm(FlaskForm):
     description = TextAreaField(validators=[DataRequired()])
     category = QuerySelectField(label='Select dish category', query_factory=category_query, allow_blank=True, validators=[DataRequired()])
     submit = SubmitField('Upload dish')
-    

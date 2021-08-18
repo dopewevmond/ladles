@@ -80,11 +80,11 @@ footer h6 {
 footer li {
     margin-bottom: 10px;
 }
-.footer-li--a {
+.footer-li--a, .admin--link {
     color: #fff;
     text-decoration: none;
 }
-.footer-li--a:hover {
+.footer-li--a:hover, .admin--link:hover {
     color: #FF9001;
     text-decoration: underline;
 }

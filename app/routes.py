@@ -1,4 +1,3 @@
-from operator import pos
 from flask_login.utils import login_required
 from app import app, db
 from flask import render_template, flash, redirect, url_for, request
@@ -63,6 +62,16 @@ def admin():
 def confirm_delete(id):
     dish = Dish.query.filter_by(id=id).first()
     return render_template('delete.html', title='Confirm Delete', dish=dish)
+
+
+@app.route('/about')
+def aboutus():
+    return render_template('coming_soon.html', title='About', message='About Us')
+
+
+@app.route('/gallery')
+def gallery():
+    return render_template('coming_soon.html', title='Gallery', message='Gallery')
 
 
 @app.route('/admin/delete/<id>')

@@ -77,7 +77,6 @@ def delete(id):
         db.session.commit()
         flash('The dish has been successfully deleted')
     posts = DishCategory.query.all()
-    
     return render_template('category.html', title='Menu', posts=posts)
 
 
@@ -85,6 +84,16 @@ def delete(id):
 def menu():
     posts = DishCategory.query.all()
     return render_template('category.html', title='Menu', posts=posts)
+
+@app.route('/about')
+def aboutus():
+    return render_template('coming_soon.html', title='About', message='About Us')
+
+
+@app.route('/gallery')
+def gallery():
+    return render_template('coming_soon.html', title='Gallery', message='Gallery')
+
 
 @app.route('/menu/<id>')
 def dishes(id):

@@ -44,10 +44,10 @@
                     <a href="{{ url_for('menu') }}" class="navbar-a--text">MENU</a>
                 </li>
                 <li class="nav-item navbar-button--padding">
-                    <a href="#" class="navbar-a--text">ABOUT</a>
+                    <a href="{{ url_for('aboutus') }}" class="navbar-a--text">ABOUT</a>
                 </li>
                 <li class="nav-item navbar-button--padding">
-                    <a href="#" class="navbar-a--text">GALLERY</a>
+                    <a href="{{ url_for('gallery') }}" class="navbar-a--text">GALLERY</a>
                 </li>
                 {% if current_user.is_authenticated %}
                     <li class="nav-item navbar-button--padding">
@@ -139,8 +139,8 @@
                     <ul>
                         <li><a href="/" class="footer-li--a">HOME</a></li>
                         <li><a href="{{ url_for('menu') }}" class="footer-li--a">MENU</a></li>
-                        <li><a href="#" class="footer-li--a">ABOUT</a></li>
-                        <li><a href="#" class="footer-li--a">GALLERY</a></li>
+                        <li><a href="{{ url_for('aboutus') }}" class="footer-li--a">ABOUT</a></li>
+                        <li><a href="{{ url_for('gallery') }}" class="footer-li--a">GALLERY</a></li>
                     </ul>
                 </div>
             </div>
